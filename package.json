@@ -1,0 +1,26 @@
+{
+  "name": "trees",
+  "version": "1.0.0",
+  "description": "Implement a Tree",
+  "main": "tree.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alwynblake/trees.git"
+  },
+  "author": "Alistair Blake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alwynblake/trees/issues"
+  },
+  "homepage": "https://github.com/Alwynblake/trees#readme",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "jest": "^24.6.0"
+  }
+}

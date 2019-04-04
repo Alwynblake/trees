@@ -112,7 +112,8 @@ class BinarySearchTree {
       if (Node.right && value > Node.value) {
         return this.contains(value, Node.right);
 
-      }  else return false;
+      } else {
+        return false;
     }
     const BST = new BinarySearchTree();
     BST.insert(new Node(10));

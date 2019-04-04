@@ -93,27 +93,27 @@ class BinarySearchTree {
     }
   }
 
-  contains(value, NodeToFind = this.root) {
+  contains(value, Node = this.root) {
     if (!this.root) {
       throw new Error('This tree is empty');
     }
-    if (value === NodeToFind.value) {
+    if (value === Node.value) {
       return true;
-    }
+    }  }
+  }
 
 // iterate through the tree:
 // check for null and Provide base case to stop recursion.
-    if (NodeToFind.left && value < NodeToFind.value) {
-      return this.contains(value, NodeToFind.left);
+    if (Node.left && value < Node.value) {
 
+      return this.contains(value, Node.left);
+    }
     else
-      if (NodeToFind.right && value > NodeToFind.value) {
-        return this.contains(value, NodeToFind.right);
+      if (Node.right && value > Node.value) {
+        return this.contains(value, Node.right);
 
-      else
+      } else {
         return false;
-
-      }
     }
     const BST = new BinarySearchTree();
     BST.insert(new Node(10));
@@ -123,4 +123,3 @@ class BinarySearchTree {
     console.log(BST);
 
     module.exports = BinaryTree;
-  }}

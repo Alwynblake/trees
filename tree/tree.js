@@ -104,13 +104,13 @@ class BinarySearchTree {
 
 // iterate through the tree:
 // check for null and Provide base case to stop recursion.
-    if (node.left && value < node.value) {
+    if (Node.left && value < Node.value) {
 
-      return this.contains(value, node.left);
+      return this.contains(value, Node.left);
     }
     else
-      if (node.right && value > node.value) {
-        return this.contains(value, node.right);
+      if (Node.right && value > Node.value) {
+        return this.contains(value, Node.right);
 
       }  else return false;
     }

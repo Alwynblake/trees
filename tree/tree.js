@@ -1,12 +1,7 @@
 'use strict';
 
-const Node = require('./node.js');
-
-class BinaryTree {
-  constructor(root) {
-    this.root = root;
-  }
-}
+const Node = require('./lib/node');
+const BinaryTree = require('.lib/binarytree');
 
 const preOrder = (root) => {
 // base case is if root is equal to null
@@ -114,12 +109,11 @@ class BinarySearchTree {
 
       } else {
         return false;
-    }
-    const BST = new BinarySearchTree();
-    BST.insert(new Node(10));
-    BST.insert(new Node(15));
-    BST.insert(new Node(5));
-    BST.insert(new Node(7));
-    console.log(BST);
+      }
+        const BST = new BinarySearchTree();
+        BST.insert(new Node(10));
+        BST.insert(new Node(15));
+        BST.insert(new Node(5));
+        BST.insert(new Node(7));
+        console.log(BST);
 
-    module.exports = BinaryTree;

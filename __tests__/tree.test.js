@@ -8,7 +8,7 @@ describe('Testing tree method', () => {
     const binaryTree = new BinaryTree();
     // can successfully instantiate an empty tree
     binaryTree.insert(20);
-    expect(binaryTree.root).toEqual(10);
+    expect(binaryTree.root).toEqual(20);
   });
 }
 

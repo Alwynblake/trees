@@ -116,4 +116,3 @@ class BinarySearchTree {
         BST.insert(new Node(5));
         BST.insert(new Node(7));
         console.log(BST);
-

@@ -1,5 +1,5 @@
 # trees
-
+[![Build Status](https://travis-ci.com/Alwynblake/trees.svg?branch=master)](https://travis-ci.com/Alwynblake/trees)
 ## Author: Alistair Blake
 
 ### Challenge:

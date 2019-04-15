@@ -2,7 +2,7 @@
 
 const BinarySearchTree = require('../tree/binary-search-tree');
 
-describe('BinarySearchTree Class', () => {
+describe('BinarySearchTree Class Insert Method', () => {
   test('Testing that a new BST instance will insert a value at the root if instantiated with that value', () => {
     const bst = new BinarySearchTree(3);
     expect(bst.root.value).toEqual(3);
@@ -32,4 +32,33 @@ describe('BinarySearchTree Class', () => {
   });
 });
 
-
+describe('BinarySearchTree Class Contains Method', () => {
+  test('Testing that the BST contains method throws an error if the BST is empty', () => {
+    const bst = new BinarySearchTree();
+    expect(() => {
+      bst.contains(3);
+    }).toThrow();
+  });
+  test('Testing that the BST contains method throws an error if the BST contains method does not have a value argument', () => {
+    const bst = new BinarySearchTree();
+    expect(() => {
+      bst.contains();
+    }).toThrow();
+  });
+  test('Testing that the BST contains method will return true if the value passed in matches the root node', () => {
+    const bst = new BinarySearchTree(10);
+    expect(bst.contains(10)).toEqual(true);
+  });
+  test('Testing that the BST contains method will return true if the value passed in matches a node on the left side of the tree', () => {
+    const bst = new BinarySearchTree(10);
+    bst.insert(8);
+    bst.insert(6);
+    expect(bst.contains(6)).toEqual(true);
+  });
+  test('Testing that the BST contains method will return true if the value passed in matches a node on the right side of the tree', () => {
+    const bst = new BinarySearchTree(10);
+    bst.insert(12);
+    bst.insert(14);
+    expect(bst.contains(12)).toEqual(true);
+  });
+});

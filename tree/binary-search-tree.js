@@ -7,31 +7,8 @@ class BinarySearchTree {
     this.root = new Node(root);
   }
 
-  // contains(value, Node = this.root) {
-  //   if (!this.root) {
-  //     throw new Error('This tree is empty');
-  //   }
-  //   if (value === Node.value) {
-  //     return true;
-  //   }
-
-
-  // iterate through the tree:
-  // check for null and Provide base case to stop recursion.
-
-
-  //   if (Node.left && value < Node.value) {
-
-  //     return this.contains(value, Node.left);
-  //   } if (Node.right && value > Node.value) {
-  //     return this.contains(value, Node.right);
-  //   }
-  //   return false;
-  // }
-
-
   insert(value) {
-    let node = this.root;
+    const node = this.root;
 
     if (!value) {
       throw new Error('Can not insert a null value');
@@ -39,38 +16,49 @@ class BinarySearchTree {
 
     if (node.value === null) {
       this.root = new Node(value);
-      console.log(node);
       return;
     }
 
-    let _insert = (node) => {
-
-      if (value < node.value) {
-
-        if (node.left === null) {
-          node.left = new Node(value);
-          return;
-
+    const _insert = (nodeToInsert) => { // eslint-disable-line
+      if (value < nodeToInsert.value) {
+        if (nodeToInsert.left === null) {
+          nodeToInsert.left = new Node(value);
+        } else if (nodeToInsert.left !== null) {
+          return _insert(nodeToInsert.left);
         }
-        else if (node.left !== null) {
-          return _insert(node.left);
+      } else if (value > nodeToInsert.value) {
+        if (nodeToInsert.right === null) {
+          nodeToInsert.right = new Node(value);
+        } else if (nodeToInsert.right !== null) {
+          return _insert(nodeToInsert.right);
         }
-
-      } else if (value > node.value) {
-
-        if (node.right === null) {
-          node.right = new Node(value);
-          return;
-        } else if (node.right !== null) {
-          return _insert(node.right);
-        }
-
       } else {
         return null;
       }
-    }
+    };
 
     _insert(node);
+  }
+
+  contains(value, node = this.root) {
+    let valueToBeReturned = false;
+
+    if (node.value === null) {
+      throw new Error('This tree is empty');
+    }
+    if (value === undefined) {
+      throw new Error('You must call this method with a value');
+    }
+    if (value === node.value) {
+      valueToBeReturned = true;
+    } else if (value < node.value) {
+      return this.contains(value, node.left);
+    } else if (value > node.value) {
+      return this.contains(value, node.right);
+    } else {
+      valueToBeReturned = false;
+    }
+    return valueToBeReturned;
   }
 }
 

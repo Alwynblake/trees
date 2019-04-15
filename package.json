@@ -4,7 +4,8 @@
   "description": "Implement a Tree",
   "main": "tree.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
